@@ -1,0 +1,74 @@
+<div class="container">
+
+    <div>
+        <header>
+            <div>
+                <img class="head" src="/assets/head.png" alt="">
+            </div>
+
+
+        </header>
+        <mat-toolbar>
+            <ul>
+                <div id="menu">
+
+                    <li><a target="_blank" href="https://rickandmortyapi.com/">Rick and Morty API</a></li>
+                    <li><a target="_blank" id="logo" href="https://github.com/collym97">Github</a></li>
+                </div>
+
+            </ul>
+
+
+        </mat-toolbar>
+
+        <br>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" [(ngModel)]='Search' class="form-control" placeholder="Buscar Personaje"
+                aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div *ngFor="let item of Model.results | filter:Search" class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">{{item.name}}</h2>
+
+                </div>
+                <h3 ngClass="alive">Status: {{item.status}}</h3>
+                <h3>Species: {{item.species}}</h3>
+                <h3>Gender: {{item.gender}}</h3>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div *ngFor="let item of Model2.results | filter:Search" class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">{{item.name}}</h2>
+
+                </div>
+                <h3>Status: {{item.status}}</h3>
+                <h3>Species: {{item.species}}</h3>
+                <h3>Gender: {{item.gender}}</h3>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div *ngFor="let item of Model3.results | filter:Search" class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">{{item.name}}</h2>
+
+                </div>
+                <h3>Status: {{item.status}}</h3>
+                <h3>Species: {{item.species}}</h3>
+                <h3>Gender: {{item.gender}}</h3>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div>
+        </div>
+
+    </div>
